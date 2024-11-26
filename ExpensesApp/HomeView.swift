@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State private var isShowingAddSheet = false
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -34,9 +36,12 @@ struct HomeView: View {
             .padding()
             .navigationTitle("Expenses")
             .navigationBarTitleDisplayMode(.large)
+            .sheet(isPresented: $isShowingAddSheet) {
+                AddExpenseView()
+            }
             .toolbar {
                 Button {
-                    // Show Add View
+                    isShowingAddSheet.toggle()
                 } label: {
                     Image(systemName: "plus")
                 }
