@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct HomeView: View {
     @State private var isShowingAddSheet = false
+    
+    @Query (sort: \Expense.date) var expenses : [Expense]
     
     var body: some View {
         NavigationStack {
@@ -26,9 +29,17 @@ struct HomeView: View {
                         .fontWeight(.semibold)
                 }.padding()
                
-                List(/*@START_MENU_TOKEN@*/0 ..< 5/*@END_MENU_TOKEN@*/) { item in
-                    Text("Expense \(item + 1)" )
-                        .padding(7)
+                List {
+                    
+                    ForEach(expenses) {  expense in
+                        HStack {
+                            Text("\(expense.date)")
+                            Text("\(expense.name)")
+                            Text("\(expense.cost)")
+                        }
+                        
+                            .padding(7)
+                    }
                 }
                 .listStyle(.plain)
                 .padding(.top)
