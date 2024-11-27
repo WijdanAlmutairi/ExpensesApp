@@ -24,7 +24,7 @@ struct ExpenseCell: View {
             Text("\(String(format: "%.2f", expense.cost) )")
                 .font(.system(size: 20))
                 .fontWeight(.semibold)
-                .foregroundColor(.accentColor)
+                .foregroundColor(expense.cost < 100 ? .accentColor : expense.cost < 500 ? .secondarytwo : .secondaryone)
                 .padding()
         }
     }
