@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A80AE8BC2CF7813F00698A09 /* EditExpenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80AE8BB2CF7813F00698A09 /* EditExpenceView.swift */; };
+		A80AE8BE2CF784EE00698A09 /* ExpenseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80AE8BD2CF784EE00698A09 /* ExpenseCell.swift */; };
 		A89077222CF629FB006620A1 /* ExpensesAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89077212CF629FB006620A1 /* ExpensesAppApp.swift */; };
 		A89077242CF629FB006620A1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89077232CF629FB006620A1 /* HomeView.swift */; };
 		A89077262CF629FD006620A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A89077252CF629FD006620A1 /* Assets.xcassets */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A80AE8BB2CF7813F00698A09 /* EditExpenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditExpenceView.swift; sourceTree = "<group>"; };
+		A80AE8BD2CF784EE00698A09 /* ExpenseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCell.swift; sourceTree = "<group>"; };
 		A890771E2CF629FB006620A1 /* ExpensesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpensesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A89077212CF629FB006620A1 /* ExpensesAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesAppApp.swift; sourceTree = "<group>"; };
 		A89077232CF629FB006620A1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -60,7 +64,9 @@
 				A89077212CF629FB006620A1 /* ExpensesAppApp.swift */,
 				A89077332CF639ED006620A1 /* Expense.swift */,
 				A89077232CF629FB006620A1 /* HomeView.swift */,
+				A80AE8BD2CF784EE00698A09 /* ExpenseCell.swift */,
 				A89077312CF63413006620A1 /* AddExpenseView.swift */,
+				A80AE8BB2CF7813F00698A09 /* EditExpenceView.swift */,
 				A890772F2CF62D55006620A1 /* Launch Screen.storyboard */,
 				A89077252CF629FD006620A1 /* Assets.xcassets */,
 				A89077272CF629FD006620A1 /* Preview Content */,
@@ -149,7 +155,9 @@
 			files = (
 				A89077342CF639ED006620A1 /* Expense.swift in Sources */,
 				A89077322CF63413006620A1 /* AddExpenseView.swift in Sources */,
+				A80AE8BC2CF7813F00698A09 /* EditExpenceView.swift in Sources */,
 				A89077242CF629FB006620A1 /* HomeView.swift in Sources */,
+				A80AE8BE2CF784EE00698A09 /* ExpenseCell.swift in Sources */,
 				A89077222CF629FB006620A1 /* ExpensesAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

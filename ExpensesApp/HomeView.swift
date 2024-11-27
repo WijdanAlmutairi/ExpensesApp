@@ -14,6 +14,8 @@ struct HomeView: View {
     
     @Query (sort: \Expense.date) var expenses : [Expense]
     
+    @State private var expenseToEdit: Expense?
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -32,10 +34,9 @@ struct HomeView: View {
                
                 List {
                     ForEach(expenses) {  expense in
-                        HStack {
-                            Text("\(expense.date)")
-                            Text("\(expense.name)")
-                            Text("\(String(format: "%.2f", expense.cost) )")
+                        ExpenseCell(expense: expense)
+                        .onTapGesture {
+                            expenseToEdit = expense
                         }
                         
                             .padding(7)
@@ -52,6 +53,9 @@ struct HomeView: View {
             .navigationBarTitleDisplayMode(.large)
             .sheet(isPresented: $isShowingAddSheet) {
                 AddExpenseView()
+            }
+            .sheet(item: $expenseToEdit) { expense in
+                EditExpenceView(expense: expense)
             }
             .toolbar {
                 Button {
