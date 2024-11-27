@@ -10,6 +10,7 @@ import SwiftData
 
 struct HomeView: View {
     @State private var isShowingAddSheet = false
+    @State private var totalCost: Double = 0
     
     @Query (sort: \Expense.date) var expenses : [Expense]
     
@@ -23,19 +24,18 @@ struct HomeView: View {
                         .foregroundColor(.accentColor)
                     .cornerRadius(12)
                     
-                    Text("50 SAR")
+                    Text("\(String(format: "%.2f", totalCost)) SAR")
                         .foregroundColor(.white)
                         .font(.title)
                         .fontWeight(.semibold)
                 }.padding()
                
                 List {
-                    
                     ForEach(expenses) {  expense in
                         HStack {
                             Text("\(expense.date)")
                             Text("\(expense.name)")
-                            Text("\(expense.cost)")
+                            Text("\(String(format: "%.2f", expense.cost) )")
                         }
                         
                             .padding(7)
@@ -43,6 +43,9 @@ struct HomeView: View {
                 }
                 .listStyle(.plain)
                 .padding(.top)
+                .onAppear() {
+                   calculateTotalCost()
+                }
             }
             .padding()
             .navigationTitle("Expenses")
@@ -57,6 +60,12 @@ struct HomeView: View {
                     Image(systemName: "plus")
                 }
             }
+        }
+    }
+    
+    func calculateTotalCost () {
+        expenses.forEach { expense in
+            totalCost += expense.cost
         }
     }
 }
