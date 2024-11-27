@@ -9,6 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct HomeView: View {
+    @Environment (\.modelContext) var context
     @State private var isShowingAddSheet = false
     @State private var totalCost: Double = 0
     
@@ -38,8 +39,12 @@ struct HomeView: View {
                         .onTapGesture {
                             expenseToEdit = expense
                         }
-                        
                             .padding(7)
+                    }
+                    .onDelete { indexSet in
+                        for index in indexSet {
+                            context.delete(expenses[index])
+                        }
                     }
                 }
                 .listStyle(.plain)
